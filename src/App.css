@@ -2,11 +2,26 @@
   text-align: center;
 }
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   padding: 20px;
   background-color: #181818;
+  color: dimgrey;
 }
-
+.home {
+  width: 256px;
+}
+.quant-unit {
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.product-preview {
+  display: flex;
+  justify-content: space-between;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -34,6 +49,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+p {
+  display: flex;
+  align-items: center;
 }
 li {
   list-style: none;
@@ -69,9 +88,6 @@ li {
 
 #notebooks {
   background: whitesmoke;
-  position: absolute;
-  left: 50%;
-  margin-left: -175px;
   margin-top: 35px;
   width: 350px;
   padding: 15px;
@@ -95,13 +111,13 @@ ul {
 #notebooks span {
   display: block;
   position: absolute;
-  background: #f0e3ce;
-  bottom: -35px;
-  left: -1px;
-  width: 360px;
-  border-radius: 0 0 5px 5px;
+  text-align: right;
+  /* background: #f0e3ce;  */
+  top: 235px;
+  width: 340px;
+  /* border-radius: 0 0 5px 5px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px;
+  padding: 4px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.5); */
 }

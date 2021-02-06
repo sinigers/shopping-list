@@ -10,6 +10,7 @@
 // }
 import React, { Component } from "react";
 import AutoCompletedText from "./AutoCompletedText";
+import Buylist from "./Buylist";
 import "./App.css";
 
 class App extends Component {
@@ -17,9 +18,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="content">
-          <h1>Hello CodeSandbox</h1>
+          <h1>Любими продукти</h1>
           <AutoCompletedText />
-          <div className="content">{/* < Home />  */}</div>
+          <div>
+            <Buylist />
+          </div>
         </div>
       </div>
     );
