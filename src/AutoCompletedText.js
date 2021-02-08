@@ -1,5 +1,5 @@
 import React from "react";
-import countries from "./Countries";
+import products from "./Products";
 import "./App.css";
 
 export default class AutoCompletedText extends React.Component {
@@ -16,7 +16,7 @@ export default class AutoCompletedText extends React.Component {
     let suggestions = [];
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, "i");
-      suggestions = countries.sort().filter((v) => regex.test(v));
+      suggestions = products.sort().filter((v) => regex.test(v));
     }
 
     this.setState(() => ({

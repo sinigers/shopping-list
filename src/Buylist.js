@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const Buylist = () => {
   const [products, setProducts] = useState([
-    { title: "зеле", body: "зеленчук", quantity: "3", unit: "кг.", id: 1 },
+    { title: "Киви", body: "плод", quantity: "1", unit: "кг.", id: 1 },
     { title: "Картофи", body: "зеленчук", quantity: "2", unit: "кг.", id: 2 },
     { title: "Ябълки", body: "плод", quantity: "14", unit: "кг.", id: 3 }
   ]);

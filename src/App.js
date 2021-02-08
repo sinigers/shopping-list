@@ -9,9 +9,9 @@
 //   );
 // }
 import React, { Component } from "react";
-import AutoCompletedText from "./AutoCompletedText";
 import Buylist from "./Buylist";
 import "./App.css";
+import AddDelListCopy from "./AddDelListCopy";
 
 class App extends Component {
   render() {
@@ -19,7 +19,10 @@ class App extends Component {
       <div className="App">
         <div className="content">
           <h1>Любими продукти</h1>
-          <AutoCompletedText />
+
+          <div>
+            <AddDelListCopy />
+          </div>
           <div>
             <Buylist />
           </div>
