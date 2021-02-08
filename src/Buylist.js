@@ -4,8 +4,14 @@ const Buylist = () => {
   const [products, setProducts] = useState([
     { title: "Киви", body: "плод", quantity: "1", unit: "кг.", id: 1 },
     { title: "Картофи", body: "зеленчук", quantity: "2", unit: "кг.", id: 2 },
-    { title: "Ябълки", body: "плод", quantity: "14", unit: "кг.", id: 3 }
+    { title: "Ябълки", body: "плод", quantity: "14", unit: "кг.", id: 3 },
+    { title: "Кафе", body: "плод", quantity: "14", unit: "кг.", id: 4 }
   ]);
+
+  const handleDelete = (id) => {
+    const newProducts = products.filter((product) => product.id !== id); //ako blog id savpada s handleDelete id
+    setProducts(newProducts);
+  };
 
   return (
     <div className="home">
@@ -17,7 +23,7 @@ const Buylist = () => {
             <h2>{product.quantity}</h2>
             <p>{product.unit}</p>
           </div>
-          <button>delete</button>
+          <button onClick={() => handleDelete(product.id)}>delete</button>
         </div>
       ))}
     </div>
@@ -25,5 +31,3 @@ const Buylist = () => {
 };
 
 export default Buylist;
-
-//e event object

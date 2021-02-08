@@ -15,45 +15,6 @@ class AddDelList extends Component {
     };
   }
 
-  //auto coml
-  onTextChange = (e) => {
-    const value = e.target.value;
-    let suggestions = [];
-    if (value.length > 0) {
-      const regex = new RegExp(`^${value}`, "i");
-      suggestions = products.sort().filter((v) => regex.test(v));
-    }
-
-    this.setState(() => ({
-      suggestions,
-      text: value
-    }));
-  };
-
-  selectedText(value) {
-    this.setState(() => ({
-      text: value,
-      suggestions: []
-    }));
-  }
-
-  renderSuggestions = () => {
-    let { suggestions } = this.state;
-    if (suggestions.length === 0) {
-      return null;
-    }
-    return (
-      <ul>
-        {suggestions.map((item, index) => (
-          <li key={index} onClick={() => this.selectedText(item)}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    );
-  };
-  //end auto comp
-
   //this is for the onChange (updates state) - everytime the user types something, the updateInput function will run
   //with two inputs (key and value which corresponds to newItem object and the string (which is event.target.value))
   //updateInput then updates the newItem state.
@@ -98,18 +59,59 @@ class AddDelList extends Component {
     this.setState({ list: updatedList });
   }
 
+  //auto coml
+  onTextChange = (e) => {
+    const value = e.target.value;
+    let suggestions = [];
+    if (value.length > 0) {
+      const regex = new RegExp(`^${value}`, "i");
+      suggestions = products.sort().filter((v) => regex.test(v));
+    }
+
+    this.setState(() => ({
+      suggestions,
+      text: value
+    }));
+  };
+
+  selectedText(value) {
+    this.setState(() => ({
+      text: value,
+      suggestions: []
+    }));
+  }
+
+  // cugestion count
+  renderSuggestions = () => {
+    let { suggestions } = this.state;
+    if (suggestions.length === 0) {
+      return null;
+    }
+    return (
+      <ul>
+        {suggestions.map((item, index) => (
+          <li key={index} onClick={() => this.selectedText(item)}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  //end auto comp
+
   render() {
     const { text, suggestions } = this.state;
     return (
       <div id="notebooks">
         <br />
-        <h2>Избери продукт</h2>
+        <h2>Продукт</h2>
         <input
           id="query"
           type="text"
-          placeholder="type the item here"
+          placeholder="избери"
           //once the input is entered, the object will be assigned a value = user's input
-          //we also need this value later for the list also
+          //also need this value later for the list also
           value={this.state.newItem}
           onChange={(e) => this.updateInput("newItem", e.target.value)}
           onChange={this.onTextChange}
